@@ -1,11 +1,12 @@
-//your JS code here. If required.
-function removeColor() {
-  // Get the reference to the colorSelect dropdown
-  const dropdown = document.getElementById("colorSelect");
-
-  // Get the selected index of the dropdown
-  const selectedIndex = dropdown.selectedIndex;
-
-  // Remove the selected color option from the dropdown
-  dropdown.remove(selectedIndex);
-}
+let select = document.getElementById("colorSelect");
+let btn =  document.querySelector("input[type=button]")
+btn.addEventListener("click", ()=>{       
+	//select.children--> will give all the child elements of select element
+    for (const child of select.children) {
+		//select.value--> will give value of the selected element
+        if(child.value === select.value){
+			//child.remove()-->remove the child element
+                child.remove();
+         }
+    }
+})
